@@ -1,18 +1,14 @@
 from abc import ABC, abstractmethod
 
 class CurrencyConverter(ABC):
+    @property
     @abstractmethod
-    def convert_usd_to_eur(self, amount):
+    def target_currency(self) -> str:
+        """Код целевой валюты (например, 'EUR')."""
         pass
 
     @abstractmethod
-    def convert_usd_to_gbp(self, amount):
+    def convert(self, amount: float) -> float:
+        """Конвертирует сумму из USD в целевую валюту."""
         pass
 
-    @abstractmethod
-    def convert_usd_to_rub(self, amount):
-        pass
-
-    @abstractmethod
-    def convert_usd_to_cny(self, amount):
-        pass
